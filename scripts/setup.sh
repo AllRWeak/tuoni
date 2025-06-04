@@ -33,7 +33,7 @@ if [ ! -d "/srv/tuoni" ]; then
   cd /srv
   ${TUONI_SUDO_COMMAND} mkdir /srv/tuoni
   ${TUONI_SUDO_COMMAND} chown $USER:$USER /srv/tuoni
-  git clone -b $TUONI_BRANCH https://github.com/AllRWeak/tuoni.git /srv/tuoni
+  git clone -b temp https://github.com/AllRWeak/tuoni.git /srv/tuoni
   cd /srv/tuoni
   ./tuoni start
 elif [[ "$NO_UPDATE" == "1" ]]; then
