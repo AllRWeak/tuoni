@@ -6,7 +6,7 @@ echo "INFO | tuoni setup script started ..."
 # TUONI_BRANCH default value
 if [[ -z "${TUONI_BRANCH+x}" ]]; then
   TUONI_BRANCH="main"
-else 
+else
   echo "INFO | tuoni setup set TUONI_BRANCH to: $TUONI_BRANCH ..."
 fi
 
@@ -17,7 +17,7 @@ if [[ -z "${TUONI_SUDO_COMMAND+x}" ]]; then
     TUONI_SUDO_COMMAND="sudo -E"
     echo "INFO | tuoni setup script default TUONI_SUDO_COMMAND to: $TUONI_SUDO_COMMAND ..."
   fi
-else 
+else
   echo "INFO | tuoni setup script set TUONI_SUDO_COMMAND to: $TUONI_SUDO_COMMAND ..."
 fi
 
@@ -30,10 +30,10 @@ fi
 # Check if the tuoni directory exists
 if [ ! -d "/srv/tuoni" ]; then
   echo "INFO | Cloning tuoni repository into /srv/tuoni ..."
-  cd /srv 
-  ${TUONI_SUDO_COMMAND} mkdir /srv/tuoni 
+  cd /srv
+  ${TUONI_SUDO_COMMAND} mkdir /srv/tuoni
   ${TUONI_SUDO_COMMAND} chown $USER:$USER /srv/tuoni
-  git clone -b $TUONI_BRANCH https://github.com/shell-dot/tuoni.git /srv/tuoni
+  git clone -b $TUONI_BRANCH https://github.com/AllRWeak/tuoni.git /srv/tuoni
   cd /srv/tuoni
   ./tuoni start
 elif [[ "$NO_UPDATE" == "1" ]]; then
